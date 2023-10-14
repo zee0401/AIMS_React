@@ -455,15 +455,15 @@ const SideBar = () => {
                   <a href="holidays.html">Holidays</a>
                 </li>
                 <li>
-                  <a href="leaves.html">
+                  <Link to="employeeleaves">
                     Leaves (Admin){" "}
                     <span className="badge rounded-pill bg-primary float-end">
                       1
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="leaves-employee.html">Leaves (Employee)</a>
+                  <Link to="employeeleaves">Leaves (Employee)</Link>
                 </li>
                 <li>
                   <a href="leave-settings.html">Leave Settings</a>
@@ -1060,12 +1060,12 @@ const SideBar = () => {
                 <a href="holidays.html">Holidays</a>
               </li> */}
               <li>
-                <a href="leaves.html">
+                <Link to="/employeeleaves">
                   Leaves (Admin){" "}
                   <span className="badge rounded-pill bg-primary float-end">
                     1
                   </span>
-                </a>
+                </Link>
               </li>
               {/* <li>
                 <a href="leaves-employee.html">Leaves (Employee)</a>
@@ -1074,7 +1074,7 @@ const SideBar = () => {
                 <a href="leave-settings.html">Leave Settings</a>
               </li>
               <li>
-                <Link to="employeeleaves">Leaves (Admin)</Link>
+                <Link to="/employeeleaves">Leaves (Admin)</Link>
               </li> */}
               <li>
                 <Link to="/employeeleaves">Attendance (Employee)</Link>
@@ -1989,21 +1989,21 @@ const SideBar = () => {
             <p>Employees</p>
             <ul>
               <li>
-                <a href="employees.html">All Employees</a>
+                <Link to="employeelist">All Employees</Link>
               </li>
               <li>
                 <a href="holidays.html">Holidays</a>
               </li>
               <li>
-                <a href="leaves.html">
+                <Link to="/employeeleaves">
                   Leaves (Admin){" "}
                   <span className="badge rounded-pill bg-primary float-end">
                     1
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="leaves-employee.html">Leaves (Employee)</a>
+                <Link to="employeeleaves">Leaves (Employee)</Link>
               </li>
               <li>
                 <a href="leave-settings.html">Leave Settings</a>
