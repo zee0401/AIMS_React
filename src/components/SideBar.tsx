@@ -5,8 +5,8 @@ const SideBar = () => {
 <div className="main-wrapper">
   <div className="header">
     <div className="header-left">
-      <Link to="admindashboard" className="logo">
-        <img src="src/assets/img/logo.png" width={40} height={40} alt="Logo" />
+      <Link to="/" className="logo">
+        <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
       </Link>
       <Link to="/" className="logo2">
         <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
@@ -31,7 +31,7 @@ const SideBar = () => {
           <a href="javascript:void(0);" className="responsive-search">
             <i className="fa-solid fa-magnifying-glass" />
           </a>
-          <form action="https://smarthr.dreamguystech.com/html/template/search.html">
+          <form action="#">
             <input
               className="form-control"
               type="text"
