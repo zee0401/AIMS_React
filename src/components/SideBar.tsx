@@ -6,7 +6,7 @@ const SideBar = () => {
   <div className="header">
     <div className="header-left">
       <Link to="/" className="logo">
-        <img src="src/assets/img/logo21.png" width={40} height={40} alt="Logo" />
+        <img src="src/assets/img/logo.png" width={40} height={40} alt="Logo" />
       </Link>
       <Link to="/" className="logo2">
         <img src="src/assets/img/logo21.png" width={40} height={40} alt="Logo" />
