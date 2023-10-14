@@ -25,39 +25,39 @@ const EmployeeLeaves = () => {
           <label className="focus-label">Employee Name</label>
         </div>
       </div>
-      <div className="col-sm-6 col-md-3">
-        <div className="input-block mb-3 form-focus select-focus">
-          <select className="select floating">
-            <option>-</option>
-            <option>Jan</option>
-            <option>Feb</option>
-            <option>Mar</option>
-            <option>Apr</option>
-            <option>May</option>
-            <option>Jun</option>
-            <option>Jul</option>
-            <option>Aug</option>
-            <option>Sep</option>
-            <option>Oct</option>
-            <option>Nov</option>
-            <option>Dec</option>
-          </select>
-          <label className="focus-label">Select Month</label>
+        {/* <div className="col-sm-6 col-md-3">
+          <div className="input-block mb-3 form-focus select-focus">
+            <select className="select floating">
+              <option>-</option>
+              <option>Jan</option>
+              <option>Feb</option>
+              <option>Mar</option>
+              <option>Apr</option>
+              <option>May</option>
+              <option>Jun</option>
+              <option>Jul</option>
+              <option>Aug</option>
+              <option>Sep</option>
+              <option>Oct</option>
+              <option>Nov</option>
+              <option>Dec</option>
+            </select>
+            <label className="focus-label">Select Month</label>
+          </div>
         </div>
-      </div>
-      <div className="col-sm-6 col-md-3">
-        <div className="input-block mb-3 form-focus select-focus">
-          <select className="select floating">
-            <option>-</option>
-            <option>2019</option>
-            <option>2018</option>
-            <option>2017</option>
-            <option>2016</option>
-            <option>2015</option>
-          </select>
-          <label className="focus-label">Select Year</label>
-        </div>
-      </div>
+        <div className="col-sm-6 col-md-3">
+          <div className="input-block mb-3 form-focus select-focus">
+            <select className="select floating">
+              <option>-</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+            </select>
+            <label className="focus-label">Select Year</label>
+          </div>
+        </div> */}
       <div className="col-sm-6 col-md-3">
         <div className="d-grid">
           <a href="#" className="btn btn-success">
@@ -112,7 +112,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-09.jpg"
+                        src="src/assets/img/profiles/avatar-09.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -373,7 +373,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-09.jpg"
+                        src="src/assets/img/profiles/avatar-09.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -620,7 +620,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-10.jpg"
+                        src="src/assets/img/profiles/avatar-10.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -867,7 +867,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-05.jpg"
+                        src="src/assets/img/profiles/avatar-05.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -1114,7 +1114,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-11.jpg"
+                        src="src/assets/img/profiles/avatar-11.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -1361,7 +1361,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-12.jpg"
+                        src="src/assets/img/profiles/avatar-12.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -1608,7 +1608,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-13.jpg"
+                        src="src/assets/img/profiles/avatar-13.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -1855,7 +1855,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-01.jpg"
+                        src="src/assets/img/profiles/avatar-01.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -2102,7 +2102,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-16.jpg"
+                        src="src/assets/img/profiles/avatar-16.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -2349,7 +2349,7 @@ const EmployeeLeaves = () => {
                   <h2 className="table-avatar">
                     <a className="avatar avatar-xs" href="profile.html">
                       <img
-                        src="assets/img/profiles/avatar-04.jpg"
+                        src="src/assets/img/profiles/avatar-04.jpg"
                         alt="User Image"
                       />
                     </a>

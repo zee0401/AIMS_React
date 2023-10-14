@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 const Login = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const Login = () => {
           <div className="account-wrapper">
             <h3 className="account-title">Login</h3>
             <p className="account-subtitle">Access to our dashboard</p>
-            <form action="https://smarthr.dreamguystech.com/html/template/admin-dashboard.html">
+            <form action="">
               <div className="input-block mb-4">
                 <label className="col-form-label">Email Address</label>
                 <input
@@ -50,9 +50,9 @@ const Login = () => {
                 </div>
               </div>
               <div className="input-block mb-4 text-center">
-                <button className="btn btn-primary account-btn" type="submit">
+                <Link  to="/" className="btn btn-primary account-btn" type="submit">
                   Login
-                </button>
+                </Link>
               </div>
               <div className="account-footer">
                 <p>

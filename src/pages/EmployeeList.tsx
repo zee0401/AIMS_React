@@ -3,7 +3,7 @@ import React from 'react'
 const EmployeeList = () => {
   return (
     <>
-  <div className="header">
+  {/* <div className="header">
     <div className="header-left">
       <a href="admin-dashboard.html" className="logo">
         <img src="assets/img/logo.png" width={40} height={40} alt="Logo" />
@@ -399,7 +399,7 @@ const EmployeeList = () => {
         </a>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* <div className="sidebar" id="sidebar">
     <div className="sidebar-inner slimscroll">
       <div id="sidebar-menu" className="sidebar-menu">
@@ -1617,7 +1617,7 @@ const EmployeeList = () => {
       </div>
     </div>
   </div> */}
-  <div className="two-col-bar" id="two-col-bar">
+  {/* <div className="two-col-bar" id="two-col-bar">
     <div className="sidebar sidebar-twocol">
       <div className="sidebar-left slimscroll">
         <div
@@ -2763,7 +2763,7 @@ const EmployeeList = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   <div className="page-wrapper">
     <div className="content container-fluid">
       <div className="page-header">

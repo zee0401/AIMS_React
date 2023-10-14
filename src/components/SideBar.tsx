@@ -6,10 +6,10 @@ const SideBar = () => {
   <div className="header">
     <div className="header-left">
       <Link to="admindashboard" className="logo">
-        <img src="assets/img/logo.png" width={40} height={40} alt="Logo" />
+        <img src="src/assets/img/logo.png" width={40} height={40} alt="Logo" />
       </Link>
       <Link to="/" className="logo2">
-        <img src="assets/img/logo2.png" width={40} height={40} alt="Logo" />
+        <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
       </Link>
     </div>
     <a id="toggle_btn" href="javascript:void(0);">
@@ -20,7 +20,7 @@ const SideBar = () => {
       </span>
     </a>
     <div className="page-title-box">
-      <h3>Dreamguy's Technologies</h3>
+      <h3>AIMS</h3>
     </div>
     <a id="mobile_btn" className="mobile_btn" href="#sidebar">
       <i className="fa-solid fa-bars" />
@@ -67,8 +67,8 @@ const SideBar = () => {
                   <div className="chat-block d-flex">
                     <span className="avatar flex-shrink-0">
                       <img
-                        src="assets/img/profiles/avatar-02.jpg"
-                        alt="User Image"
+                        src="src/assets/img/profiles/avatar-02.jpg"
+                        alt=""
                       />
                     </span>
                     <div className="media-body flex-grow-1">
@@ -91,7 +91,7 @@ const SideBar = () => {
                   <div className="chat-block d-flex">
                     <span className="avatar flex-shrink-0">
                       <img
-                        src="assets/img/profiles/avatar-03.jpg"
+                        src="src/assets/img/profiles/avatar-03.jpg"
                         alt="User Image"
                       />
                     </span>
@@ -115,7 +115,7 @@ const SideBar = () => {
                   <div className="chat-block d-flex">
                     <span className="avatar flex-shrink-0">
                       <img
-                        src="assets/img/profiles/avatar-06.jpg"
+                        src="src/assets/img/profiles/avatar-06.jpg"
                         alt="User Image"
                       />
                     </span>
@@ -141,7 +141,7 @@ const SideBar = () => {
                   <div className="chat-block d-flex">
                     <span className="avatar flex-shrink-0">
                       <img
-                        src="assets/img/profiles/avatar-17.jpg"
+                        src="src/assets/img/profiles/avatar-17.jpg"
                         alt="User Image"
                       />
                     </span>
@@ -165,7 +165,7 @@ const SideBar = () => {
                   <div className="chat-block d-flex">
                     <span className="avatar flex-shrink-0">
                       <img
-                        src="assets/img/profiles/avatar-13.jpg"
+                        src="src/assets/img/profiles/avatar-13.jpg"
                         alt="User Image"
                       />
                     </span>
@@ -214,7 +214,7 @@ const SideBar = () => {
                     <div className="list-left">
                       <span className="avatar">
                         <img
-                          src="assets/img/profiles/avatar-09.jpg"
+                          src="src/assets/img/profiles/avatar-09.jpg"
                           alt="User Image"
                         />
                       </span>
@@ -236,7 +236,7 @@ const SideBar = () => {
                     <div className="list-left">
                       <span className="avatar">
                         <img
-                          src="assets/img/profiles/avatar-02.jpg"
+                          src="src/assets/img/profiles/avatar-02.jpg"
                           alt="User Image"
                         />
                       </span>
@@ -258,7 +258,7 @@ const SideBar = () => {
                     <div className="list-left">
                       <span className="avatar">
                         <img
-                          src="assets/img/profiles/avatar-03.jpg"
+                          src="src/assets/img/profiles/avatar-03.jpg"
                           alt="User Image"
                         />
                       </span>
@@ -280,7 +280,7 @@ const SideBar = () => {
                     <div className="list-left">
                       <span className="avatar">
                         <img
-                          src="assets/img/profiles/avatar-05.jpg"
+                          src="src/assets/img/profiles/avatar-05.jpg"
                           alt="User Image"
                         />
                       </span>
@@ -302,7 +302,7 @@ const SideBar = () => {
                     <div className="list-left">
                       <span className="avatar">
                         <img
-                          src="assets/img/profiles/avatar-08.jpg"
+                          src="src/assets/img/profiles/avatar-08.jpg"
                           alt="User Image"
                         />
                       </span>
@@ -335,21 +335,21 @@ const SideBar = () => {
           data-bs-toggle="dropdown"
         >
           <span className="user-img">
-            <img src="assets/img/profiles/avatar-21.jpg" alt="User Image" />
+            <img src="src/assets/img/profiles/avatar-21.jpg" alt="User Image" />
             <span className="status online" />
           </span>
           <span>Admin</span>
         </a>
         <div className="dropdown-menu">
-          <a className="dropdown-item" href="profile.html">
+          <a className="dropdown-item" href="#">
             My Profile
           </a>
-          <a className="dropdown-item" href="settings.html">
+          <a className="dropdown-item" href="#">
             Settings
           </a>
-          <a className="dropdown-item" href="index.html">
+          <Link className="dropdown-item" to="/login">
             Logout
-          </a>
+          </Link>
         </div>
       </li>
     </ul>
@@ -397,7 +397,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-            <li className="submenu">
+            {/* <li className="submenu">
               <a href="#">
                 <i className="la la-cube" /> <span> Apps</span>{" "}
                 <span className="menu-arrow" />
@@ -438,7 +438,7 @@ const SideBar = () => {
                   <a href="file-manager.html">File Manager</a>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li className="menu-title">
               <span>Employees</span>
             </li>
@@ -454,26 +454,26 @@ const SideBar = () => {
                 <li>
                   <a href="holidays.html">Holidays</a>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="employeeleaves">
                     Leaves (Admin){" "}
                     <span className="badge rounded-pill bg-primary float-end">
                       1
                     </span>
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="employeeleaves">Leaves (Employee)</Link>
                 </li>
-                <li>
+                {/* <li>
                   <a href="leave-settings.html">Leave Settings</a>
-                </li>
+                </li> */}
                 <li>
-                  <Link to="/employeeleaves">Attendance (Admin) </Link> 
+                  <Link to="/employeeleaves">Attendance </Link> 
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/employeeleaves">Attendance (Employee)</Link>
-                </li>
+                </li> */}
                 {/* <li>
                   <a href="departments.html">Departments</a>
                 </li>
@@ -491,7 +491,7 @@ const SideBar = () => {
                 </li> */}
               </ul>
             </li>
-            <li>
+            {/* <li>
               <a href="clients.html">
                 <i className="la la-users" /> <span>Clients</span>
               </a>
@@ -551,10 +551,10 @@ const SideBar = () => {
                   <a href="taxes.html">Taxes</a>
                 </li>
               </ul>
-            </li>
+            </li> */}
           </ul>
-          <button className="viewmoremenu">More Menu</button>
-          <ul className="hidden-links hidden">
+          {/* <button className="viewmoremenu">More Menu</button> */}
+          {/* <ul className="hidden-links hidden">
             <li className="submenu">
               <a href="#">
                 <i className="la la-files-o" /> <span> Accounting </span>{" "}
@@ -715,8 +715,8 @@ const SideBar = () => {
               <span>Administration</span>
             </li>
             <li>
-              <a href="assets.html">
-                <i className="la la-object-ungroup" /> <span>Assets</span>
+              <a href="src/assets.html">
+                <i className="la la-object-ungroup" /> <span>src/assets</span>
               </a>
             </li>
             <li className="submenu">
@@ -983,7 +983,7 @@ const SideBar = () => {
                 </li>
               </ul>
             </li>
-          </ul>
+          </ul> */}
         </nav>
         <ul className="sidebar-vertical">
           <li className="menu-title">
@@ -1059,14 +1059,14 @@ const SideBar = () => {
               {/* <li>
                 <a href="holidays.html">Holidays</a>
               </li> */}
-              <li>
+              {/* <li>
                 <Link to="/employeeleaves">
                   Leaves (Admin){" "}
                   <span className="badge rounded-pill bg-primary float-end">
                     1
                   </span>
                 </Link>
-              </li>
+              </li> */}
               {/* <li>
                 <a href="leaves-employee.html">Leaves (Employee)</a>
               </li>
@@ -1079,7 +1079,7 @@ const SideBar = () => {
               <li>
                 <Link to="/employeeleaves">Attendance (Employee)</Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="departments.html">Departments</a>
               </li>
               <li>
@@ -1093,10 +1093,10 @@ const SideBar = () => {
               </li>
               <li>
                 <a href="overtime.html">Overtime</a>
-              </li>
+              </li> */}
             </ul>
           </li>
-          <li>
+          {/* <li>
             <a href="clients.html">
               <i className="la la-users" /> <span>Clients</span>
             </a>
@@ -1311,8 +1311,8 @@ const SideBar = () => {
             <span>Administration</span>
           </li>
           <li>
-            <a href="assets.html">
-              <i className="la la-object-ungroup" /> <span>Assets</span>
+            <a href="src/assets.html">
+              <i className="la la-object-ungroup" /> <span>src/assets</span>
             </a>
           </li>
           <li className="submenu">
@@ -1429,11 +1429,11 @@ const SideBar = () => {
                 <a href="error-500.html">500 Error </a>
               </li>
             </ul>
-          </li>
+          </li> */}
 
  
 
-          <li>
+          {/* <li>
             <a href="#">
               <i className="la la-file-text" /> <span>Documentation</span>
             </a>
@@ -1484,12 +1484,12 @@ const SideBar = () => {
                 </a>
               </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
   </div>
-  <div className="two-col-bar" id="two-col-bar">
+  {/* <div className="two-col-bar" id="two-col-bar">
     <div className="sidebar sidebar-twocol" id="navbar-nav">
       <div className="sidebar-left slimscroll">
         <div
@@ -1722,12 +1722,12 @@ const SideBar = () => {
           </a>
           <a
             className="nav-link"
-            id="v-pills-assets-tab"
-            title="Assets"
+            id="v-pills-src/assets-tab"
+            title="src/assets"
             data-bs-toggle="pill"
-            href="#v-pills-assets"
+            href="#v-pills-src/assets"
             role="tab"
-            aria-controls="v-pills-assets"
+            aria-controls="v-pills-src/assets"
             aria-selected="false"
           >
             <span className="material-icons-outlined">web_asset</span>
@@ -2218,14 +2218,14 @@ const SideBar = () => {
 
           <div
             className="tab-pane fade"
-            id="v-pills-assets"
+            id="v-pills-src/assets"
             role="tabpanel"
-            aria-labelledby="v-pills-assets-tab"
+            aria-labelledby="v-pills-src/assets-tab"
           >
-            <p>Assets</p>
+            <p>src/assets</p>
             <ul>
               <li>
-                <a href="assets.html"> Assets </a>
+                <a href="src/assets.html"> src/assets </a>
               </li>
             </ul>
           </div>
@@ -2490,7 +2490,7 @@ const SideBar = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
 
 </div>
 </>
