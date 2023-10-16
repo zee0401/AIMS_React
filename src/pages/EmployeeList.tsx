@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../assets/css/sel.css"
 const EmployeeList = () => {
   return (
     <>
@@ -411,7 +411,7 @@ const EmployeeList = () => {
             <li className="submenu">
               <a href="#">
                 <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
-                <span className="menu-arrow" />
+                <span className="menu-arrow" /> 
               </a>
               <ul>
                 <li>
@@ -3538,7 +3538,7 @@ const EmployeeList = () => {
                     <label className="col-form-label">
                       Department <span className="text-danger">*</span>
                     </label>
-                    <select className="select select2-hidden-accessible">
+                    <select className="select select2-search--dropdown sel">
                       <option>Select Department</option>
                       <option>Web Development</option>
                       <option>IT Management</option>
@@ -3551,7 +3551,7 @@ const EmployeeList = () => {
                     <label className="col-form-label">
                       Select Office Location <span className="text-danger">*</span>
                     </label>
-                    <select className="select select2-hidden-accessible">
+                    <select className="select select2-search--dropdown sel">
                       <option>Select Location</option>
                       <option>Praman Proserv</option>
                       <option>Metric View</option>
@@ -3563,7 +3563,7 @@ const EmployeeList = () => {
                     <label className="col-form-label">
                       Supervisor <span className="text-danger">*</span>
                     </label>
-                    <select className="select select2-search--dropdown select2-hidden-accessible">
+                    <select className="select select2-search--dropdown sel">
                       <option>Select Designation</option>
                       <option>Web Designer</option>
                       <option>Web Developer</option>
@@ -3573,23 +3573,22 @@ const EmployeeList = () => {
                 </div>
                 <div className="col-md-12" >
                 <div className="input-block mb-3 row">
-<label className="col-lg-3 col-form-label">User:</label>
-<div className="col-lg-9" style={{paddingTop:"6px"}}>
-<div className="form-check form-check-inline">
-<input className="form-check-input" type="radio" name="admin"  value="option1" checked/>
-<label className="form-check-label" htmlFor="gender_male">
-Admin
-</label>
-</div>
-<div className="form-check form-check-inline">
-<input className="form-check-input" type="radio" name="supervisor" value="option2"/>
-<label className="form-check-label" htmlFor="gender_female">
-Supervisor
-</label>
-</div>
-</div>
-</div>
-                  
+                        <label className="col-lg-3 col-form-label">User:</label>
+                        <div className="col-lg-9" style={{paddingTop:"6px", paddingLeft:"75px"}}>
+                        <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="user"  value="option1" checked/>
+                        <label className="form-check-label" htmlFor="gender_male">
+                        Admin
+                        </label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="user" value="option2"/>
+                        <label className="form-check-label" htmlFor="gender_female">
+                        Supervisor
+                        </label>
+                        </div>
+                        </div>
+                        </div>
                 </div>
               </div>
               {/* <div className="table-responsive m-t-15">

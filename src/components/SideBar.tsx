@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const SideBar = () => {
   return (
     <>
@@ -1054,7 +1054,7 @@ const SideBar = () => {
             </a>
             <ul>
               <li>
-                <Link to="/employeelist">All Employees</Link>
+                <NavLink to="/employeelist">All Employees</NavLink>
               </li>
               {/* <li>
                 <a href="holidays.html">Holidays</a>

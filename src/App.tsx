@@ -12,7 +12,7 @@ function App() {
   return (
     <>
   <BrowserRouter>
-  <SideBar/>
+<SideBar/>
   <Routes>
     <Route path='/login' element={<Login/>}></Route>
     <Route path='/' element={<AdminDashboard/>}></Route>
@@ -21,6 +21,7 @@ function App() {
   </Routes>
   </BrowserRouter>
     </>
+    
   )
 }
 
