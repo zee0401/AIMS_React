@@ -3549,12 +3549,12 @@ const EmployeeList = () => {
                 <div className="col-md-6">
                   <div className="input-block mb-3">
                     <label className="col-form-label">
-                      User type <span className="text-danger">*</span>
+                      Select Office Location <span className="text-danger">*</span>
                     </label>
-                    <select className="select select select2-hidden-accessible">
-                      <option>Select User type</option>
-                      <option>Admin</option>
-                      <option>Supervisor</option>
+                    <select className="select select2-hidden-accessible">
+                      <option>Select Location</option>
+                      <option>Praman Proserv</option>
+                      <option>Metric View</option>
                     </select>
                   </div>
                 </div>
@@ -3563,13 +3563,33 @@ const EmployeeList = () => {
                     <label className="col-form-label">
                       Supervisor <span className="text-danger">*</span>
                     </label>
-                    <select className="select select2-hidden-accessible">
+                    <select className="select select2-search--dropdown select2-hidden-accessible">
                       <option>Select Designation</option>
                       <option>Web Designer</option>
                       <option>Web Developer</option>
                       <option>Android Developer</option>
                     </select>
                   </div>
+                </div>
+                <div className="col-md-12" >
+                <div className="input-block mb-3 row">
+<label className="col-lg-3 col-form-label">User:</label>
+<div className="col-lg-9" style={{paddingTop:"6px"}}>
+<div className="form-check form-check-inline">
+<input className="form-check-input" type="radio" name="admin"  value="option1" checked/>
+<label className="form-check-label" htmlFor="gender_male">
+Admin
+</label>
+</div>
+<div className="form-check form-check-inline">
+<input className="form-check-input" type="radio" name="supervisor" value="option2"/>
+<label className="form-check-label" htmlFor="gender_female">
+Supervisor
+</label>
+</div>
+</div>
+</div>
+                  
                 </div>
               </div>
               {/* <div className="table-responsive m-t-15">
