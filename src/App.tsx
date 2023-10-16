@@ -12,16 +12,15 @@ function App() {
   return (
     <>
   <BrowserRouter>
-<SideBar/>
+  {location.pathname !== '/login' && <SideBar/>}
   <Routes>
-    <Route path='/login' element={<Login/>}></Route>
+    <Route path='/login' element={<Login/>}></Route> 
     <Route path='/' element={<AdminDashboard/>}></Route>
     <Route path='/employeelist' element={<EmployeeList/>}></Route>
     <Route path='/employeeleaves' element={<EmployeeLeaves/>}></Route>
   </Routes>
   </BrowserRouter>
     </>
-    
   )
 }
 
