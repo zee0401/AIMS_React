@@ -1,4 +1,7 @@
 import React from 'react'
+import Leaves from '../components/Leaves'
+import UserChart from '../components/UserChart'
+import DoughnutChart from '../components/DoughnutChart'
 
 const AdminDashboard = () => {
   return (
@@ -69,28 +72,28 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
-    {/* <div className="row">
+    <div className="row">
       <div className="col-md-12">
         <div className="row">
           <div className="col-md-6 text-center">
             <div className="card">
               <div className="card-body">
-                <h3 className="card-title">Total Revenue</h3>
-                <div id="bar-charts" />
+                <h3 className="card-title">Attendence</h3>
+                <UserChart/>
               </div>
             </div>
           </div>
           <div className="col-md-6 text-center">
             <div className="card">
               <div className="card-body">
-                <h3 className="card-title">Sales Overview</h3>
-                <div id="line-charts" />
+                <h3 className="card-title">Leaves</h3>
+                <DoughnutChart/>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div> */}
+    </div>
     {/* <div className="row">
       <div className="col-md-12">
         <div className="card-group m-b-30">
@@ -199,7 +202,7 @@ const AdminDashboard = () => {
       <div className="col-md-12 col-lg-12 col-xl-4 d-flex">
         <div className="card flex-fill dash-statistics">
           <div className="card-body">
-            <h5 className="card-title">Statistics</h5>
+            <h5 className="card-title">Project Statistics</h5>
             <div className="stats-list">
               <div className="stats-info">
                 <p>
@@ -436,6 +439,7 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
+    <Leaves/>
     {/* <div className="row">
       <div className="col-md-6 d-flex">
         <div className="card card-table flex-fill">
@@ -578,7 +582,7 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div> */}
-    <div className="row">
+    {/* <div className="row">
       <div className="col-md-6 d-flex">
         <div className="card card-table flex-fill">
           <div className="card-header">
@@ -1252,7 +1256,7 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
 

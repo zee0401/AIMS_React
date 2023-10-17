@@ -64,9 +64,9 @@ const Login = () => {
       <div className="account-page">
         <div className="main-wrapper">
           <div className="account-content">
-            <a href="job-list.html" className="btn btn-primary apply-btn">
+            {/* <a href="job-list.html" className="btn btn-primary apply-btn">
               Apply Job
-            </a>
+            </a> */}
             <div className="container">
               <div className="account-logo">
                 <a href="admin-dashboard.html">

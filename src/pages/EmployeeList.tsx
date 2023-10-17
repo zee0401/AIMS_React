@@ -3573,17 +3573,23 @@ const EmployeeList = () => {
                 </div>
                 <div className="col-md-12" >
                 <div className="input-block mb-3 row">
-                        <label className="col-lg-3 col-form-label">User:</label>
-                        <div className="col-lg-9" style={{paddingTop:"6px", paddingLeft:"75px"}}>
+                        <label className="col-lg-3 col-form-label">User Type:</label>
+                        <div className="col-lg-9" style={{paddingTop:"6px"}}>
+                        <div className="form-check form-check-inline ">
+                        <input className="form-check-input" type="radio" name="usertype" value="option1"  checked/>
+                        <label className="form-check-label" >
+                        User
+                        </label>
+                        </div>
                         <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="user"  value="option1" checked/>
-                        <label className="form-check-label" htmlFor="gender_male">
+                        <input className="form-check-input" type="radio" name="usertype"  value="option2"/>
+                        <label className="form-check-label" >
                         Admin
                         </label>
                         </div>
                         <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="user" value="option2"/>
-                        <label className="form-check-label" htmlFor="gender_female">
+                        <input className="form-check-input" type="radio" name="usertype" value="option3"/>
+                        <label className="form-check-label">
                         Supervisor
                         </label>
                         </div>
