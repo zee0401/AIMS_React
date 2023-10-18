@@ -1,7 +1,7 @@
-import React from 'react'
 import Leaves from '../components/Leaves'
 import UserChart from '../components/UserChart'
 import DoughnutChart from '../components/DoughnutChart'
+import BarChart from '../components/BarChart'
 
 const AdminDashboard = () => {
   return (
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
     <div className="row">
       <div className="col-md-12">
         <div className="row">
-          <div className="col-md-6 text-center">
+          <div className="col-md-3 text-center">
             <div className="card">
               <div className="card-body">
                 <h3 className="card-title">Attendence</h3>
@@ -83,11 +83,19 @@ const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 text-center">
+          <div className="col-md-3 text-center">
             <div className="card">
               <div className="card-body">
                 <h3 className="card-title">Leaves</h3>
                 <DoughnutChart/>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 text-center">
+            <div className="card">
+              <div className="card-body">
+                <h3 className="card-title" style={{marginBottom:"-10px"}}>Leaves</h3>
+                <BarChart/>
               </div>
             </div>
           </div>

@@ -5,12 +5,15 @@ const SideBar = () => {
 <div className="main-wrapper">
   <div className="header">
     <div className="header-left">
-      <Link to="/" className="logo">
+      {/* <Link to="/" className="logo">
         <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
       </Link>
       <Link to="/" className="logo2">
         <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
-      </Link> 
+      </Link>  */}
+      <div className="page-title-box text-center">
+      <h3>AIMS</h3>
+    </div>
     </div>
     <a id="toggle_btn" href="javascript:void(0);">
       <span className="bar-icon">
@@ -20,7 +23,7 @@ const SideBar = () => {
       </span>
     </a>
     <div className="page-title-box">
-      <h3>AIMS</h3>
+      <h3>Metrics View</h3>
     </div>
     <a id="mobile_btn" className="mobile_btn" href="#sidebar">
       <i className="fa-solid fa-bars" />
