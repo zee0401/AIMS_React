@@ -1,6 +1,24 @@
-import React from 'react'
+import { useEffect, useState} from 'react'
+import axios from 'axios';
 
 const EmployeeLeaves = () => {
+
+const [leaves, setLeaves]=useState([])
+
+  useEffect(() => {
+    axios
+      .get("https://sm.oortfy.com/v1/tenant/list")
+      .then((response) => {
+        setLeaves(response.data);
+        console.log(leaves)
+      })
+      .catch((error) => {
+        console.error("Error fetching employee list: ", error); 
+      });
+  }, []);
+
+
+
   return (
     <>
     <div className="page-wrapper h"style={{minHeight:"1px !important"}}>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Tenant {
   ID: number;
@@ -17,7 +18,9 @@ const Login = () => {
   const [selectedTenant, setSelectedTenant] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [tenantId, setTenantId] = useState(""); 
+  //const [tenantId, setTenantId] = useState(""); 
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -25,6 +28,7 @@ const Login = () => {
       .then((response) => {
         const tenantData = response.data;
         setTenantList(tenantData);
+        console.log(tenantData)
       })
       .catch((error) => {
         console.error("Error fetching tenant list: ", error); 
@@ -45,10 +49,12 @@ const Login = () => {
       };
 
       axios
-        .post("https://sm.oortfy.com/v1/auth/login", loginData) 
+        .post("https://sm.oortfy.com/v1/auth/login", loginData)
         .then((response) => {
-          
+          if(response.data.Status ==="success"){
           console.log("Login successful", response.data);
+          navigate('/')
+          }
         })
         .catch((error) => {
           console.error("Login failed", error);
@@ -57,6 +63,25 @@ const Login = () => {
       console.error("Selected tenant not found in the list");
     }
   };
+
+//   axios
+//   .post("https://sm.oortfy.com/v1/auth/login", loginData{
+//     selectedTenant,email,password
+//   },{withCredentials:true}) 
+//   axios.defaults.header.common['Authorization'] = 'Bearer ${loginData['token']}';
+//   .then((response) => {
+//     if(response.data.Status ==="success"){
+//     console.log("Login successful", response.data);
+//     navigate('/')
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Login failed", error);
+//   });
+// } else {
+// console.error("Selected tenant not found in the list");
+// }
+// };
 
 
   return (
@@ -128,11 +153,11 @@ const Login = () => {
                         Login
                       </button>
                     </div>
-                    <div className="account-footer">
+                    {/* <div className="account-footer">
                       <p>
                         Don't have an account yet? <a href="register.html">Register</a>
                       </p>
-                    </div>
+                    </div> */}
                   </form>
                 </div>
               </div>

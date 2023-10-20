@@ -28,7 +28,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-09.jpg"
+                        src="src/assets/img/profiles/avatar-09.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -112,7 +112,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-02.jpg"
+                        src="src/assets/img/profiles/avatar-02.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -198,7 +198,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-10.jpg"
+                        src="src/assets/img/profiles/avatar-10.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -283,7 +283,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-05.jpg"
+                        src="src/assets/img/profiles/avatar-05.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -368,7 +368,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-24.jpg"
+                        src="src/assets/img/profiles/avatar-24.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -452,7 +452,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-08.jpg"
+                        src="src/assets/img/profiles/avatar-08.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -537,7 +537,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-15.jpg"
+                        src="src/assets/img/profiles/avatar-15.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -622,7 +622,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-20.jpg"
+                        src="src/assets/img/profiles/avatar-20.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -707,7 +707,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-03.jpg"
+                        src="src/assets/img/profiles/avatar-03.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -791,7 +791,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-20.jpg"
+                        src="src/assets/img/profiles/avatar-20.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -876,7 +876,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-02.jpg"
+                        src="src/assets/img/profiles/avatar-02.jpg"
                         alt="User Image"
                       />
                     </a>
@@ -961,7 +961,7 @@ const Leaves = () => {
                   <h2 className="table-avatar">
                     <a href="profile.html" className="avatar">
                       <img
-                        src="assets/img/profiles/avatar-25.jpg"
+                        src="src/assets/img/profiles/avatar-25.jpg"
                         alt="User Image"
                       />
                     </a>

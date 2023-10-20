@@ -11,10 +11,10 @@ const AdminDashboard = () => {
     <div className="page-header">
       <div className="row">
         <div className="col-sm-12">
-          <h3 className="page-title">Welcome Admin!</h3>
-          <ul className="breadcrumb">
+          <h3 className="page-title">Dashboard</h3>
+          {/* <ul className="breadcrumb">
             <li className="breadcrumb-item active">Dashboard</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>

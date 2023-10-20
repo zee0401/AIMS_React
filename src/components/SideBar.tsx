@@ -1,40 +1,50 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 const SideBar = () => {
   return (
     <>
-<div className="main-wrapper">
-  <div className="header">
-    <div className="header-left">
-      {/* <Link to="/" className="logo">
-        <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
-      </Link>
-      <Link to="/" className="logo2">
-        <img src="src/assets/img/logo2.png" width={40} height={40} alt="Logo" />
-      </Link>  */}
-      <div className="page-title-box text-center">
+      <div className="main-wrapper">
+        <div className="header">
+          <div className="header-left">
+            <Link to="/" className="logo">
+              <img
+                src="src/assets/img/logo2.png"
+                width={40}
+                height={40}
+                alt="Logo"
+              />
+            </Link>
+            <Link to="/" className="logo2">
+              <img
+                src="src/assets/img/logo2.png"
+                width={40}
+                height={40}
+                alt="Logo"
+              />
+            </Link>
+            {/* <div className="page-title-box text-center">
       <h3>AIMS</h3>
-    </div>
-    </div>
-    <a id="toggle_btn" href="javascript:void(0);">
-      <span className="bar-icon">
-        <span />
-        <span />
-        <span />
-      </span>
-    </a>
-    <div className="page-title-box">
-      <h3>Metrics View</h3>
-    </div>
-    <a id="mobile_btn" className="mobile_btn" href="#sidebar">
-      <i className="fa-solid fa-bars" />
-    </a>
-    <ul className="nav user-menu">
-      <li className="nav-item">
-        <div className="top-nav-search">
-          <a href="javascript:void(0);" className="responsive-search">
-            <i className="fa-solid fa-magnifying-glass" />
+    </div> */}
+          </div>
+          <a id="toggle_btn" href="javascript:void(0);">
+            <span className="bar-icon">
+              <span />
+              <span />
+              <span />
+            </span>
           </a>
-          <form action="#">
+          <div className="page-title-box">
+            <h3>Metrics View</h3>
+          </div>
+          <a id="mobile_btn" className="mobile_btn" href="#sidebar">
+            <i className="fa-solid fa-bars" />
+          </a>
+          <ul className="nav user-menu">
+            <li className="nav-item">
+              <div className="top-nav-search">
+                <a href="javascript:void(0);" className="responsive-search">
+                  <i className="fa-solid fa-magnifying-glass" />
+                </a>
+                {/* <form action="#">
             <input
               className="form-control"
               type="text"
@@ -43,364 +53,392 @@ const SideBar = () => {
             <button className="btn" type="submit">
               <i className="fa-solid fa-magnifying-glass" />
             </button>
-          </form>
-        </div>
-      </li>
-      <li className="nav-item dropdown">
-        <a
-          href="#"
-          className="dropdown-toggle nav-link"
-          data-bs-toggle="dropdown"
-        >
-          <i className="fa-regular fa-bell" />{" "}
-          <span className="badge rounded-pill">3</span>
-        </a>
-        <div className="dropdown-menu notifications">
-          <div className="topnav-dropdown-header">
-            <span className="notification-title">Notifications</span>
-            <a href="javascript:void(0)" className="clear-noti">
-              {" "}
-              Clear All{" "}
-            </a>
-          </div>
-          <div className="noti-content">
-            <ul className="notification-list">
-              <li className="notification-message">
-                <a href="activities.html">
-                  <div className="chat-block d-flex">
-                    <span className="avatar flex-shrink-0">
-                      <img
-                        src="src/assets/img/profiles/avatar-02.jpg"
-                        alt=""
-                      />
-                    </span>
-                    <div className="media-body flex-grow-1">
-                      <p className="noti-details">
-                        <span className="noti-title">John Doe</span> added new
-                        task{" "}
-                        <span className="noti-title">
-                          Patient appointment booking
-                        </span>
-                      </p>
-                      <p className="noti-time">
-                        <span className="notification-time">4 mins ago</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="activities.html">
-                  <div className="chat-block d-flex">
-                    <span className="avatar flex-shrink-0">
-                      <img
-                        src="src/assets/img/profiles/avatar-03.jpg"
-                        alt="User Image"
-                      />
-                    </span>
-                    <div className="media-body flex-grow-1">
-                      <p className="noti-details">
-                        <span className="noti-title">Tarah Shropshire</span>{" "}
-                        changed the task name{" "}
-                        <span className="noti-title">
-                          Appointment booking with payment gateway
-                        </span>
-                      </p>
-                      <p className="noti-time">
-                        <span className="notification-time">6 mins ago</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="activities.html">
-                  <div className="chat-block d-flex">
-                    <span className="avatar flex-shrink-0">
-                      <img
-                        src="src/assets/img/profiles/avatar-06.jpg"
-                        alt="User Image"
-                      />
-                    </span>
-                    <div className="media-body flex-grow-1">
-                      <p className="noti-details">
-                        <span className="noti-title">Misty Tison</span> added{" "}
-                        <span className="noti-title">Domenic Houston</span> and{" "}
-                        <span className="noti-title">Claire Mapes</span> to
-                        project{" "}
-                        <span className="noti-title">
-                          Doctor available module
-                        </span>
-                      </p>
-                      <p className="noti-time">
-                        <span className="notification-time">8 mins ago</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="activities.html">
-                  <div className="chat-block d-flex">
-                    <span className="avatar flex-shrink-0">
-                      <img
-                        src="src/assets/img/profiles/avatar-17.jpg"
-                        alt="User Image"
-                      />
-                    </span>
-                    <div className="media-body flex-grow-1">
-                      <p className="noti-details">
-                        <span className="noti-title">Rolland Webber</span>{" "}
-                        completed task{" "}
-                        <span className="noti-title">
-                          Patient and Doctor video conferencing
-                        </span>
-                      </p>
-                      <p className="noti-time">
-                        <span className="notification-time">12 mins ago</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="activities.html">
-                  <div className="chat-block d-flex">
-                    <span className="avatar flex-shrink-0">
-                      <img
-                        src="src/assets/img/profiles/avatar-13.jpg"
-                        alt="User Image"
-                      />
-                    </span>
-                    <div className="media-body flex-grow-1">
-                      <p className="noti-details">
-                        <span className="noti-title">Bernardo Galaviz</span>{" "}
-                        added new task{" "}
-                        <span className="noti-title">Private chat module</span>
-                      </p>
-                      <p className="noti-time">
-                        <span className="notification-time">2 days ago</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="topnav-dropdown-footer">
-            <a href="activities.html">View all Notifications</a>
-          </div>
-        </div>
-      </li>
-      <li className="nav-item dropdown">
-        <a
-          href="#"
-          className="dropdown-toggle nav-link"
-          data-bs-toggle="dropdown"
-        >
-          <i className="fa-regular fa-comment" />
-          <span className="badge rounded-pill">8</span>
-        </a>
-        <div className="dropdown-menu notifications">
-          <div className="topnav-dropdown-header">
-            <span className="notification-title">Messages</span>
-            <a href="javascript:void(0)" className="clear-noti">
-              {" "}
-              Clear All{" "}
-            </a>
-          </div>
-          <div className="noti-content">
-            <ul className="notification-list">
-              <li className="notification-message">
-                <a href="chat.html">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">
-                        <img
-                          src="src/assets/img/profiles/avatar-09.jpg"
-                          alt="User Image"
-                        />
-                      </span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Richard Miles </span>
-                      <span className="message-time">12:28 AM</span>
-                      <div className="clearfix" />
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="chat.html">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">
-                        <img
-                          src="src/assets/img/profiles/avatar-02.jpg"
-                          alt="User Image"
-                        />
-                      </span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">John Doe</span>
-                      <span className="message-time">6 Mar</span>
-                      <div className="clearfix" />
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="chat.html">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">
-                        <img
-                          src="src/assets/img/profiles/avatar-03.jpg"
-                          alt="User Image"
-                        />
-                      </span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author"> Tarah Shropshire </span>
-                      <span className="message-time">5 Mar</span>
-                      <div className="clearfix" />
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="chat.html">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">
-                        <img
-                          src="src/assets/img/profiles/avatar-05.jpg"
-                          alt="User Image"
-                        />
-                      </span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">Mike Litorus</span>
-                      <span className="message-time">3 Mar</span>
-                      <div className="clearfix" />
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li className="notification-message">
-                <a href="chat.html">
-                  <div className="list-item">
-                    <div className="list-left">
-                      <span className="avatar">
-                        <img
-                          src="src/assets/img/profiles/avatar-08.jpg"
-                          alt="User Image"
-                        />
-                      </span>
-                    </div>
-                    <div className="list-body">
-                      <span className="message-author">
-                        {" "}
-                        Catherine Manseau{" "}
-                      </span>
-                      <span className="message-time">27 Feb</span>
-                      <div className="clearfix" />
-                      <span className="message-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="topnav-dropdown-footer">
-            <a href="chat.html">View all Messages</a>
-          </div>
-        </div>
-      </li>
-      <li className="nav-item dropdown has-arrow main-drop">
-        <a
-          href="#"
-          className="dropdown-toggle nav-link"
-          data-bs-toggle="dropdown"
-        >
-          <span className="user-img">
-            <img src="src/assets/img/profiles/avatar-21.jpg" alt="User Image" />
-            <span className="status online" />
-          </span>
-          <span>Admin</span>
-        </a>
-        <div className="dropdown-menu">
-          <a className="dropdown-item" href="#">
-            My Profile
-          </a>
-          <a className="dropdown-item" href="#">
-            Settings
-          </a>
-          <Link className="dropdown-item" to="/login">
-            Logout
-          </Link>
-        </div>
-      </li>
-    </ul>
-    <div className="dropdown mobile-user-menu">
-      <a
-        href="#"
-        className="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <i className="fa-solid fa-ellipsis-vertical" />
-      </a>
-      <div className="dropdown-menu dropdown-menu-right">
-        <a className="dropdown-item" href="profile.html">
-          My Profile
-        </a>
-        <a className="dropdown-item" href="settings.html">
-          Settings
-        </a>
-        <a className="dropdown-item" href="index.html">
-          Logout
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="sidebar" id="sidebar">
-    <div className="sidebar-inner slimscroll">
-      <div id="sidebar-menu" className="sidebar-menu">
-        <nav className="greedys sidebar-horizantal">
-          <ul className="list-inline-item list-unstyled links">
-            <li className="menu-title">
-              <span>Main</span>
+          </form> */}
+              </div>
             </li>
-            <li className="submenu">
-              <a href="#">
-                <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
-                <span className="menu-arrow" />
+            <li className="nav-item dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <i className="fa-regular fa-bell" />{" "}
+                <span className="badge rounded-pill">3</span>
               </a>
-              <ul>
-                <li>
-                  <Link to="/">Admin Dashboard</Link>
-                </li>
-                <li>
-                <Link to="/">Employee Dashboard</Link>
-                </li>
-              </ul>
+              <div className="dropdown-menu notifications">
+                <div className="topnav-dropdown-header">
+                  <span className="notification-title">Notifications</span>
+                  <a href="javascript:void(0)" className="clear-noti">
+                    {" "}
+                    Clear All{" "}
+                  </a>
+                </div>
+                <div className="noti-content">
+                  <ul className="notification-list">
+                    <li className="notification-message">
+                      <a href="activities.html">
+                        <div className="chat-block d-flex">
+                          <span className="avatar flex-shrink-0">
+                            <img
+                              src="src/assets/img/profiles/avatar-02.jpg"
+                              alt=""
+                            />
+                          </span>
+                          <div className="media-body flex-grow-1">
+                            <p className="noti-details">
+                              <span className="noti-title">John Doe</span> added
+                              new task{" "}
+                              <span className="noti-title">
+                                Patient appointment booking
+                              </span>
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                4 mins ago
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="activities.html">
+                        <div className="chat-block d-flex">
+                          <span className="avatar flex-shrink-0">
+                            <img
+                              src="src/assets/img/profiles/avatar-03.jpg"
+                              alt="User Image"
+                            />
+                          </span>
+                          <div className="media-body flex-grow-1">
+                            <p className="noti-details">
+                              <span className="noti-title">
+                                Tarah Shropshire
+                              </span>{" "}
+                              changed the task name{" "}
+                              <span className="noti-title">
+                                Appointment booking with payment gateway
+                              </span>
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                6 mins ago
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="activities.html">
+                        <div className="chat-block d-flex">
+                          <span className="avatar flex-shrink-0">
+                            <img
+                              src="src/assets/img/profiles/avatar-06.jpg"
+                              alt="User Image"
+                            />
+                          </span>
+                          <div className="media-body flex-grow-1">
+                            <p className="noti-details">
+                              <span className="noti-title">Misty Tison</span>{" "}
+                              added{" "}
+                              <span className="noti-title">
+                                Domenic Houston
+                              </span>{" "}
+                              and{" "}
+                              <span className="noti-title">Claire Mapes</span>{" "}
+                              to project{" "}
+                              <span className="noti-title">
+                                Doctor available module
+                              </span>
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                8 mins ago
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="activities.html">
+                        <div className="chat-block d-flex">
+                          <span className="avatar flex-shrink-0">
+                            <img
+                              src="src/assets/img/profiles/avatar-17.jpg"
+                              alt="User Image"
+                            />
+                          </span>
+                          <div className="media-body flex-grow-1">
+                            <p className="noti-details">
+                              <span className="noti-title">Rolland Webber</span>{" "}
+                              completed task{" "}
+                              <span className="noti-title">
+                                Patient and Doctor video conferencing
+                              </span>
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                12 mins ago
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="activities.html">
+                        <div className="chat-block d-flex">
+                          <span className="avatar flex-shrink-0">
+                            <img
+                              src="src/assets/img/profiles/avatar-13.jpg"
+                              alt="User Image"
+                            />
+                          </span>
+                          <div className="media-body flex-grow-1">
+                            <p className="noti-details">
+                              <span className="noti-title">
+                                Bernardo Galaviz
+                              </span>{" "}
+                              added new task{" "}
+                              <span className="noti-title">
+                                Private chat module
+                              </span>
+                            </p>
+                            <p className="noti-time">
+                              <span className="notification-time">
+                                2 days ago
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="topnav-dropdown-footer">
+                  <a href="activities.html">View all Notifications</a>
+                </div>
+              </div>
             </li>
-            {/* <li className="submenu">
+            <li className="nav-item dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <i className="fa-regular fa-comment" />
+                <span className="badge rounded-pill">8</span>
+              </a>
+              <div className="dropdown-menu notifications">
+                <div className="topnav-dropdown-header">
+                  <span className="notification-title">Messages</span>
+                  <a href="javascript:void(0)" className="clear-noti">
+                    {" "}
+                    Clear All{" "}
+                  </a>
+                </div>
+                <div className="noti-content">
+                  <ul className="notification-list">
+                    <li className="notification-message">
+                      <a href="chat.html">
+                        <div className="list-item">
+                          <div className="list-left">
+                            <span className="avatar">
+                              <img
+                                src="src/assets/img/profiles/avatar-09.jpg"
+                                alt="User Image"
+                              />
+                            </span>
+                          </div>
+                          <div className="list-body">
+                            <span className="message-author">
+                              Richard Miles{" "}
+                            </span>
+                            <span className="message-time">12:28 AM</span>
+                            <div className="clearfix" />
+                            <span className="message-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="chat.html">
+                        <div className="list-item">
+                          <div className="list-left">
+                            <span className="avatar">
+                              <img
+                                src="src/assets/img/profiles/avatar-02.jpg"
+                                alt="User Image"
+                              />
+                            </span>
+                          </div>
+                          <div className="list-body">
+                            <span className="message-author">John Doe</span>
+                            <span className="message-time">6 Mar</span>
+                            <div className="clearfix" />
+                            <span className="message-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="chat.html">
+                        <div className="list-item">
+                          <div className="list-left">
+                            <span className="avatar">
+                              <img
+                                src="src/assets/img/profiles/avatar-03.jpg"
+                                alt="User Image"
+                              />
+                            </span>
+                          </div>
+                          <div className="list-body">
+                            <span className="message-author">
+                              {" "}
+                              Tarah Shropshire{" "}
+                            </span>
+                            <span className="message-time">5 Mar</span>
+                            <div className="clearfix" />
+                            <span className="message-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="chat.html">
+                        <div className="list-item">
+                          <div className="list-left">
+                            <span className="avatar">
+                              <img
+                                src="src/assets/img/profiles/avatar-05.jpg"
+                                alt="User Image"
+                              />
+                            </span>
+                          </div>
+                          <div className="list-body">
+                            <span className="message-author">Mike Litorus</span>
+                            <span className="message-time">3 Mar</span>
+                            <div className="clearfix" />
+                            <span className="message-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li className="notification-message">
+                      <a href="chat.html">
+                        <div className="list-item">
+                          <div className="list-left">
+                            <span className="avatar">
+                              <img
+                                src="src/assets/img/profiles/avatar-08.jpg"
+                                alt="User Image"
+                              />
+                            </span>
+                          </div>
+                          <div className="list-body">
+                            <span className="message-author">
+                              {" "}
+                              Catherine Manseau{" "}
+                            </span>
+                            <span className="message-time">27 Feb</span>
+                            <div className="clearfix" />
+                            <span className="message-content">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="topnav-dropdown-footer">
+                  <a href="chat.html">View all Messages</a>
+                </div>
+              </div>
+            </li>
+            <li className="nav-item dropdown has-arrow main-drop">
+              <a
+                href="#"
+                className="dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
+                <span className="user-img">
+                  <img
+                    src="src/assets/img/profiles/avatar-21.jpg"
+                    alt="User Image"
+                  />
+                  <span className="status online" />
+                </span>
+                <span>Admin</span>
+              </a>
+              <div className="dropdown-menu">
+                <a className="dropdown-item" href="#">
+                  My Profile
+                </a>
+                <a className="dropdown-item" href="#">
+                  Settings
+                </a>
+                <Link className="dropdown-item" to="/login">
+                  Logout
+                </Link>
+              </div>
+            </li>
+          </ul>
+          <div className="dropdown mobile-user-menu">
+            <a
+              href="#"
+              className="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fa-solid fa-ellipsis-vertical" />
+            </a>
+            <div className="dropdown-menu dropdown-menu-right">
+              <a className="dropdown-item" href="profile.html">
+                My Profile
+              </a>
+              <a className="dropdown-item" href="settings.html">
+                Settings
+              </a>
+              <a className="dropdown-item" href="index.html">
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="sidebar" id="sidebar">
+          <div className="sidebar-inner slimscroll">
+            <div id="sidebar-menu" className="sidebar-menu">
+              <nav className="greedys sidebar-horizantal">
+                <ul className="list-inline-item list-unstyled links">
+                  {/* <li className="menu-title">
+              <span>Main</span>
+            </li> */}
+                  <li className="submenu">
+                    <a href="#">
+                      <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
+                      <span className="menu-arrow" />
+                    </a>
+                    <ul>
+                      <li>
+                        <Link to="/home">Admin Dashboard</Link>
+                      </li>
+                      <li>
+                        <Link to="/home">Employee Dashboard</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  {/* <li className="submenu">
               <a href="#">
                 <i className="la la-cube" /> <span> Apps</span>{" "}
                 <span className="menu-arrow" />
@@ -442,22 +480,22 @@ const SideBar = () => {
                 </li>
               </ul>
             </li> */}
-            <li className="menu-title">
-              <span>Employees</span>
-            </li>
-            <li className="submenu">
-              <a href="#" className="noti-dot">
-                <i className="la la-user" /> <span> Employees</span>{" "}
-                <span className="menu-arrow" />
-              </a>
-              <ul>
-                <li>
-                  <a href="employees.html">All Employees</a>
-                </li>
-                <li>
-                  <a href="holidays.html">Holidays</a>
-                </li>
-                {/* <li>
+                  <li className="menu-title">
+                    <span>Employees</span>
+                  </li>
+                  <li className="submenu">
+                    <a href="#" className="noti-dot">
+                      <i className="la la-user" /> <span> Employees</span>{" "}
+                      <span className="menu-arrow" />
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="employees.html">All Employees</a>
+                      </li>
+                      <li>
+                        <a href="holidays.html">Holidays</a>
+                      </li>
+                      {/* <li>
                   <Link to="employeeleaves">
                     Leaves (Admin){" "}
                     <span className="badge rounded-pill bg-primary float-end">
@@ -465,19 +503,19 @@ const SideBar = () => {
                     </span>
                   </Link>
                 </li> */}
-                <li>
-                  <Link to="employeeleaves">Leaves (Employee)</Link>
-                </li>
-                {/* <li>
+                      <li>
+                        <Link to="employeeleaves">Leaves (Employee)</Link>
+                      </li>
+                      {/* <li>
                   <a href="leave-settings.html">Leave Settings</a>
                 </li> */}
-                <li>
-                  <Link to="/employeeleaves">Attendance </Link> 
-                </li>
-                {/* <li>
+                      <li>
+                        <Link to="/employeeleaves">Attendance </Link>
+                      </li>
+                      {/* <li>
                   <Link to="/employeeleaves">Attendance (Employee)</Link>
                 </li> */}
-                {/* <li>
+                      {/* <li>
                   <a href="departments.html">Departments</a>
                 </li>
                 <li>
@@ -492,9 +530,9 @@ const SideBar = () => {
                 <li>
                   <a href="overtime.html">Overtime</a>
                 </li> */}
-              </ul>
-            </li>
-            {/* <li>
+                    </ul>
+                  </li>
+                  {/* <li>
               <a href="clients.html">
                 <i className="la la-users" /> <span>Clients</span>
               </a>
@@ -555,9 +593,9 @@ const SideBar = () => {
                 </li>
               </ul>
             </li> */}
-          </ul>
-          {/* <button className="viewmoremenu">More Menu</button> */}
-          {/* <ul className="hidden-links hidden">
+                </ul>
+                {/* <button className="viewmoremenu">More Menu</button> */}
+                {/* <ul className="hidden-links hidden">
             <li className="submenu">
               <a href="#">
                 <i className="la la-files-o" /> <span> Accounting </span>{" "}
@@ -987,25 +1025,25 @@ const SideBar = () => {
               </ul>
             </li>
           </ul> */}
-        </nav>
-        <ul className="sidebar-vertical">
-          <li className="menu-title">
+              </nav>
+              <ul className="sidebar-vertical">
+                {/* <li className="menu-title">
             <span>Main</span>
-          </li>
-          <li className="submenu">
-            <a href="#">
-              <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
-              <span className="menu-arrow" />
-            </a>
-            <ul>
-              <li>
-                <Link className="active" to="/">
-                  Admin Dashboard
-                </Link>
-              </li>
-            </ul>
-          </li>
-          {/* <li className="submenu">
+          </li> */}
+                <li className="submenu">
+                  <a href="#">
+                    <i className="la la-dashboard" /> <span> Dashboard</span>{" "}
+                    <span className="menu-arrow" />
+                  </a>
+                  <ul>
+                    <li>
+                      <Link className="active" to="/home">
+                        Admin Dashboard
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                {/* <li className="submenu">
             <a href="#">
               <i className="la la-cube" /> <span> Apps</span>{" "}
               <span className="menu-arrow" />
@@ -1047,22 +1085,26 @@ const SideBar = () => {
               </li>
             </ul>
           </li> */}
-          <li className="menu-title">
-            <span>Employees</span>
-          </li>
-          <li className="submenu">
-            <a href="#" className="noti-dot">
-              <i className="la la-user" /> <span> Employees</span>{" "}
-              <span className="menu-arrow" />
-            </a>
-            <ul>
-              <li>
-                <NavLink to="/employeelist">All Employees</NavLink>
-              </li>
-              {/* <li>
+                <li className="menu-title">
+                  <span>Employees</span>
+                </li>
+                <li className="submenu">
+                  <a href="#" className="noti-dot">
+                    <i className="la la-user" /> <span> Employees</span>{" "}
+                    <span className="menu-arrow" />
+                  </a>
+                  <ul>
+                    <li>
+                      <NavLink to="/addemployee">Add Employee</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/employeelist">All Employees</NavLink>
+                    </li>
+
+                    {/* <li>
                 <a href="holidays.html">Holidays</a>
               </li> */}
-              {/* <li>
+                    {/* <li>
                 <Link to="/employeeleaves">
                   Leaves (Admin){" "}
                   <span className="badge rounded-pill bg-primary float-end">
@@ -1070,7 +1112,7 @@ const SideBar = () => {
                   </span>
                 </Link>
               </li> */}
-              {/* <li>
+                    {/* <li>
                 <a href="leaves-employee.html">Leaves (Employee)</a>
               </li>
               <li>
@@ -1079,10 +1121,10 @@ const SideBar = () => {
               <li>
                 <Link to="/employeeleaves">Leaves (Admin)</Link>
               </li> */}
-              <li>
-                <Link to="/employeeleaves">Attendance (Employee)</Link>
-              </li>
-              {/* <li>
+                    <li>
+                      <Link to="/employeeleaves">Attendance (Employee)</Link>
+                    </li>
+                    {/* <li>
                 <a href="departments.html">Departments</a>
               </li>
               <li>
@@ -1097,9 +1139,9 @@ const SideBar = () => {
               <li>
                 <a href="overtime.html">Overtime</a>
               </li> */}
-            </ul>
-          </li>
-          {/* <li>
+                  </ul>
+                </li>
+                {/* <li>
             <a href="clients.html">
               <i className="la la-users" /> <span>Clients</span>
             </a>
@@ -1434,9 +1476,7 @@ const SideBar = () => {
             </ul>
           </li> */}
 
- 
-
-          {/* <li>
+                {/* <li>
             <a href="#">
               <i className="la la-file-text" /> <span>Documentation</span>
             </a>
@@ -1488,11 +1528,18 @@ const SideBar = () => {
               </li>
             </ul>
           </li> */}
-        </ul>
-      </div>
-    </div>
-  </div>
-  {/* <div className="two-col-bar" id="two-col-bar">
+              </ul>
+
+              <div
+                className="footer fixed-bottom text-secondary"
+                style={{ paddingLeft: "15px" }}
+              >
+                <span>&copy; Praman India.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="two-col-bar" id="two-col-bar">
     <div className="sidebar sidebar-twocol" id="navbar-nav">
       <div className="sidebar-left slimscroll">
         <div
@@ -2492,12 +2539,13 @@ const SideBar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   </div> */}
+        <Outlet />
+      </div>
+    </>
+  );
+};
 
-</div>
-</>
-  )
-}
-
-export default SideBar
+export default SideBar;
