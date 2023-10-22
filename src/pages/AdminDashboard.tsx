@@ -1,108 +1,129 @@
-import Leaves from '../components/Leaves'
-import UserChart from '../components/UserChart'
-import DoughnutChart from '../components/DoughnutChart'
-import BarChart from '../components/BarChart'
+import Leaves from "../components/Leaves";
+import UserChart from "../components/UserChart";
+import DoughnutChart from "../components/DoughnutChart";
+import BarChart from "../components/BarChart";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const AdminDashboard = () => {
+  const [leaves, setLeaves] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://sm.oortfy.com/v1/tenant/list")
+      .then((response) => {
+        setLeaves(response.data);
+        console.log(leaves);
+      })
+      .catch((error) => {
+        console.error("Error fetching employee list: ", error);
+      });
+  }, []);
+
   return (
     <>
-    <div className="page-wrapper">
-  <div className="content container-fluid">
-    <div className="page-header">
-      <div className="row">
-        <div className="col-sm-12">
-          <h3 className="page-title">Dashboard</h3>
-          {/* <ul className="breadcrumb">
+      <div className="page-wrapper">
+        <div className="content container-fluid">
+          <div className="page-header">
+            <div className="row">
+              <div className="col-sm-12">
+                <h3 className="page-title">Dashboard</h3>
+                {/* <ul className="breadcrumb">
             <li className="breadcrumb-item active">Dashboard</li>
           </ul> */}
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-        <div className="card dash-widget">
-          <div className="card-body">
-            <span className="dash-widget-icon">
-              <i className="fa-solid fa-cubes" />
-            </span>
-            <div className="dash-widget-info">
-              <h3>112</h3>
-              <span>Projects</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-        <div className="card dash-widget">
-          <div className="card-body">
-            <span className="dash-widget-icon">
-              <i className="fa-solid fa-dollar-sign" />
-            </span>
-            <div className="dash-widget-info">
-              <h3>44</h3>
-              <span>Clients</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-        <div className="card dash-widget">
-          <div className="card-body">
-            <span className="dash-widget-icon">
-              <i className="fa-regular fa-gem" />
-            </span>
-            <div className="dash-widget-info">
-              <h3>37</h3>
-              <span>Tasks</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-        <div className="card dash-widget">
-          <div className="card-body">
-            <span className="dash-widget-icon">
-              <i className="fa-solid fa-user" />
-            </span>
-            <div className="dash-widget-info">
-              <h3>218</h3>
-              <span>Employees</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-md-12">
-        <div className="row">
-          <div className="col-md-3 text-center">
-            <div className="card">
-              <div className="card-body">
-                <h3 className="card-title">Attendence</h3>
-                <UserChart/>
               </div>
             </div>
           </div>
-          <div className="col-md-3 text-center">
-            <div className="card">
-              <div className="card-body">
-                <h3 className="card-title">Leaves</h3>
-                <DoughnutChart/>
+          <div className="row">
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i className="fa-solid fa-cubes" />
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>112</h3>
+                    <span>Projects</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i className="fa-solid fa-dollar-sign" />
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>44</h3>
+                    <span>Clients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i className="fa-regular fa-gem" />
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>37</h3>
+                    <span>Tasks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+              <div className="card dash-widget">
+                <div className="card-body">
+                  <span className="dash-widget-icon">
+                    <i className="fa-solid fa-user" />
+                  </span>
+                  <div className="dash-widget-info">
+                    <h3>218</h3>
+                    <span>Employees</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-md-6 text-center">
-            <div className="card">
-              <div className="card-body">
-                <h3 className="card-title" style={{marginBottom:"-10px"}}>Leaves</h3>
-                <BarChart/>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="col-md-3 text-center">
+                  <div className="card">
+                    <div className="card-body">
+                      <h3 className="card-title">Attendence</h3>
+                      <UserChart />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3 text-center">
+                  <div className="card">
+                    <div className="card-body">
+                      <h3 className="card-title">Leaves</h3>
+                      <DoughnutChart />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6 text-center">
+                  <div className="card">
+                    <div className="card-body">
+                      <h3
+                        className="card-title"
+                        style={{ marginBottom: "-10px" }}
+                      >
+                        Leaves
+                      </h3>
+                      <BarChart />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    {/* <div className="row">
+          {/* <div className="row">
       <div className="col-md-12">
         <div className="card-group m-b-30">
           <div className="card">
@@ -206,249 +227,251 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div> */}
-    <div className="row">
-      <div className="col-md-12 col-lg-12 col-xl-4 d-flex">
-        <div className="card flex-fill dash-statistics">
-          <div className="card-body">
-            <h5 className="card-title">Project Statistics</h5>
-            <div className="stats-list">
-              <div className="stats-info">
-                <p>
-                  Today Leave{" "}
-                  <strong>
-                    4 <small>/ 65</small>
-                  </strong>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-primary w-31"
-                    role="progressbar"
-                    aria-valuenow={31}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-              <div className="stats-info">
-                <p>
-                  Pending Invoice{" "}
-                  <strong>
-                    15 <small>/ 92</small>
-                  </strong>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-warning w-31"
-                    role="progressbar"
-                    aria-valuenow={31}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-              <div className="stats-info">
-                <p>
-                  Completed Projects{" "}
-                  <strong>
-                    85 <small>/ 112</small>
-                  </strong>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-success w-62"
-                    role="progressbar"
-                    aria-valuenow={62}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-              <div className="stats-info">
-                <p>
-                  Open Tickets{" "}
-                  <strong>
-                    190 <small>/ 212</small>
-                  </strong>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-danger w-62"
-                    role="progressbar"
-                    aria-valuenow={62}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-              <div className="stats-info">
-                <p>
-                  Closed Tickets{" "}
-                  <strong>
-                    22 <small>/ 212</small>
-                  </strong>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-info w-22"
-                    role="progressbar"
-                    aria-valuenow={22}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-md-12 col-lg-6 col-xl-4 d-flex">
-        <div className="card flex-fill">
-          <div className="card-body">
-            <h4 className="card-title">Task Statistics</h4>
-            <div className="statistics">
-              <div className="row">
-                <div className="col-md-6 col-6 text-center">
-                  <div className="stats-box mb-4">
-                    <p>Total Tasks</p>
-                    <h3>385</h3>
-                  </div>
-                </div>
-                <div className="col-md-6 col-6 text-center">
-                  <div className="stats-box mb-4">
-                    <p>Overdue Tasks</p>
-                    <h3>19</h3>
+          <div className="row">
+            <div className="col-md-12 col-lg-12 col-xl-4 d-flex">
+              <div className="card flex-fill dash-statistics">
+                <div className="card-body">
+                  <h5 className="card-title">Project Statistics</h5>
+                  <div className="stats-list">
+                    <div className="stats-info">
+                      <p>
+                        Today Leave{" "}
+                        <strong>
+                          4 <small>/ 65</small>
+                        </strong>
+                      </p>
+                      <div className="progress">
+                        <div
+                          className="progress-bar bg-primary w-31"
+                          role="progressbar"
+                          aria-valuenow={31}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                        />
+                      </div>
+                    </div>
+                    <div className="stats-info">
+                      <p>
+                        Pending Invoice{" "}
+                        <strong>
+                          15 <small>/ 92</small>
+                        </strong>
+                      </p>
+                      <div className="progress">
+                        <div
+                          className="progress-bar bg-warning w-31"
+                          role="progressbar"
+                          aria-valuenow={31}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                        />
+                      </div>
+                    </div>
+                    <div className="stats-info">
+                      <p>
+                        Completed Projects{" "}
+                        <strong>
+                          85 <small>/ 112</small>
+                        </strong>
+                      </p>
+                      <div className="progress">
+                        <div
+                          className="progress-bar bg-success w-62"
+                          role="progressbar"
+                          aria-valuenow={62}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                        />
+                      </div>
+                    </div>
+                    <div className="stats-info">
+                      <p>
+                        Open Tickets{" "}
+                        <strong>
+                          190 <small>/ 212</small>
+                        </strong>
+                      </p>
+                      <div className="progress">
+                        <div
+                          className="progress-bar bg-danger w-62"
+                          role="progressbar"
+                          aria-valuenow={62}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                        />
+                      </div>
+                    </div>
+                    <div className="stats-info">
+                      <p>
+                        Closed Tickets{" "}
+                        <strong>
+                          22 <small>/ 212</small>
+                        </strong>
+                      </p>
+                      <div className="progress">
+                        <div
+                          className="progress-bar bg-info w-22"
+                          role="progressbar"
+                          aria-valuenow={22}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="progress mb-4">
-              <div
-                className="progress-bar bg-purple w-30"
-                role="progressbar"
-                aria-valuenow={30}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              >
-                30%
-              </div>
-              <div
-                className="progress-bar bg-warning w-22"
-                role="progressbar"
-                aria-valuenow={18}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              >
-                22%
-              </div>
-              <div
-                className="progress-bar bg-success w-24"
-                role="progressbar"
-                aria-valuenow={12}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              >
-                24%
-              </div>
-              <div
-                className="progress-bar bg-danger w-21"
-                role="progressbar"
-                aria-valuenow={14}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              >
-                21%
-              </div>
-              <div
-                className="progress-bar bg-info w-10"
-                role="progressbar"
-                aria-valuenow={14}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              >
-                10%
+            <div className="col-md-12 col-lg-6 col-xl-4 d-flex">
+              <div className="card flex-fill">
+                <div className="card-body">
+                  <h4 className="card-title">Task Statistics</h4>
+                  <div className="statistics">
+                    <div className="row">
+                      <div className="col-md-6 col-6 text-center">
+                        <div className="stats-box mb-4">
+                          <p>Total Tasks</p>
+                          <h3>385</h3>
+                        </div>
+                      </div>
+                      <div className="col-md-6 col-6 text-center">
+                        <div className="stats-box mb-4">
+                          <p>Overdue Tasks</p>
+                          <h3>19</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="progress mb-4">
+                    <div
+                      className="progress-bar bg-purple w-30"
+                      role="progressbar"
+                      aria-valuenow={30}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      30%
+                    </div>
+                    <div
+                      className="progress-bar bg-warning w-22"
+                      role="progressbar"
+                      aria-valuenow={18}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      22%
+                    </div>
+                    <div
+                      className="progress-bar bg-success w-24"
+                      role="progressbar"
+                      aria-valuenow={12}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      24%
+                    </div>
+                    <div
+                      className="progress-bar bg-danger w-21"
+                      role="progressbar"
+                      aria-valuenow={14}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      21%
+                    </div>
+                    <div
+                      className="progress-bar bg-info w-10"
+                      role="progressbar"
+                      aria-valuenow={14}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      10%
+                    </div>
+                  </div>
+                  <div>
+                    <p>
+                      <i className="fa-regular fa-circle-dot text-purple me-2" />
+                      Completed Tasks <span className="float-end">166</span>
+                    </p>
+                    <p>
+                      <i className="fa-regular fa-circle-dot text-warning me-2" />
+                      Inprogress Tasks <span className="float-end">115</span>
+                    </p>
+                    <p>
+                      <i className="fa-regular fa-circle-dot text-success me-2" />
+                      On Hold Tasks <span className="float-end">31</span>
+                    </p>
+                    <p>
+                      <i className="fa-regular fa-circle-dot text-danger me-2" />
+                      Pending Tasks <span className="float-end">47</span>
+                    </p>
+                    <p className="mb-0">
+                      <i className="fa-regular fa-circle-dot text-info me-2" />
+                      Review Tasks <span className="float-end">5</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <p>
-                <i className="fa-regular fa-circle-dot text-purple me-2" />
-                Completed Tasks <span className="float-end">166</span>
-              </p>
-              <p>
-                <i className="fa-regular fa-circle-dot text-warning me-2" />
-                Inprogress Tasks <span className="float-end">115</span>
-              </p>
-              <p>
-                <i className="fa-regular fa-circle-dot text-success me-2" />
-                On Hold Tasks <span className="float-end">31</span>
-              </p>
-              <p>
-                <i className="fa-regular fa-circle-dot text-danger me-2" />
-                Pending Tasks <span className="float-end">47</span>
-              </p>
-              <p className="mb-0">
-                <i className="fa-regular fa-circle-dot text-info me-2" />
-                Review Tasks <span className="float-end">5</span>
-              </p>
+            <div className="col-md-12 col-lg-6 col-xl-4 d-flex">
+              <div className="card flex-fill">
+                <div className="card-body">
+                  <h4 className="card-title">
+                    Today Absent{" "}
+                    <span className="badge bg-inverse-danger ms-2">5</span>
+                  </h4>
+                  <div className="leave-info-box">
+                    <div className="media d-flex align-items-center">
+                      <a href="profile.html" className="avatar">
+                        <img src="assets/img/user.jpg" alt="User Image" />
+                      </a>
+                      <div className="media-body flex-grow-1">
+                        <div className="text-sm my-0">Martin Lewis</div>
+                      </div>
+                    </div>
+                    <div className="row align-items-center mt-3">
+                      <div className="col-6">
+                        <h6 className="mb-0">4 Sep 2019</h6>
+                        <span className="text-sm text-muted">Leave Date</span>
+                      </div>
+                      <div className="col-6 text-end">
+                        <span className="badge bg-inverse-danger">Pending</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="leave-info-box">
+                    <div className="media d-flex align-items-center">
+                      <a href="profile.html" className="avatar">
+                        <img src="assets/img/user.jpg" alt="User Image" />
+                      </a>
+                      <div className="media-body flex-grow-1">
+                        <div className="text-sm my-0">Martin Lewis</div>
+                      </div>
+                    </div>
+                    <div className="row align-items-center mt-3">
+                      <div className="col-6">
+                        <h6 className="mb-0">4 Sep 2019</h6>
+                        <span className="text-sm text-muted">Leave Date</span>
+                      </div>
+                      <div className="col-6 text-end">
+                        <span className="badge bg-inverse-success">
+                          Approved
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="load-more text-center">
+                    <a className="text-dark" href="javascript:void(0);">
+                      Load More
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="col-md-12 col-lg-6 col-xl-4 d-flex">
-        <div className="card flex-fill">
-          <div className="card-body">
-            <h4 className="card-title">
-              Today Absent{" "}
-              <span className="badge bg-inverse-danger ms-2">5</span>
-            </h4>
-            <div className="leave-info-box">
-              <div className="media d-flex align-items-center">
-                <a href="profile.html" className="avatar">
-                  <img src="assets/img/user.jpg" alt="User Image" />
-                </a>
-                <div className="media-body flex-grow-1">
-                  <div className="text-sm my-0">Martin Lewis</div>
-                </div>
-              </div>
-              <div className="row align-items-center mt-3">
-                <div className="col-6">
-                  <h6 className="mb-0">4 Sep 2019</h6>
-                  <span className="text-sm text-muted">Leave Date</span>
-                </div>
-                <div className="col-6 text-end">
-                  <span className="badge bg-inverse-danger">Pending</span>
-                </div>
-              </div>
-            </div>
-            <div className="leave-info-box">
-              <div className="media d-flex align-items-center">
-                <a href="profile.html" className="avatar">
-                  <img src="assets/img/user.jpg" alt="User Image" />
-                </a>
-                <div className="media-body flex-grow-1">
-                  <div className="text-sm my-0">Martin Lewis</div>
-                </div>
-              </div>
-              <div className="row align-items-center mt-3">
-                <div className="col-6">
-                  <h6 className="mb-0">4 Sep 2019</h6>
-                  <span className="text-sm text-muted">Leave Date</span>
-                </div>
-                <div className="col-6 text-end">
-                  <span className="badge bg-inverse-success">Approved</span>
-                </div>
-              </div>
-            </div>
-            <div className="load-more text-center">
-              <a className="text-dark" href="javascript:void(0);">
-                Load More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <Leaves/>
-    {/* <div className="row">
+          <Leaves />
+          {/* <div className="row">
       <div className="col-md-6 d-flex">
         <div className="card card-table flex-fill">
           <div className="card-header">
@@ -590,7 +613,7 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div> */}
-    {/* <div className="row">
+          {/* <div className="row">
       <div className="col-md-6 d-flex">
         <div className="card card-table flex-fill">
           <div className="card-header">
@@ -1265,11 +1288,10 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div> */}
-  </div>
-</div>
-
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;

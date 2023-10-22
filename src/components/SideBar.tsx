@@ -1037,7 +1037,7 @@ const SideBar = () => {
                   </a>
                   <ul>
                     <li>
-                      <Link className="active" to="/home">
+                      <Link className="active" to="/">
                         Admin Dashboard
                       </Link>
                     </li>

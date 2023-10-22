@@ -18,7 +18,7 @@ const Login = () => {
   const [selectedTenant, setSelectedTenant] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const [tenantId, setTenantId] = useState(""); 
+  //const [tenantId, setTenantId] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,32 +28,34 @@ const Login = () => {
       .then((response) => {
         const tenantData = response.data;
         setTenantList(tenantData);
-        console.log(tenantData)
+        console.log(tenantData);
       })
       .catch((error) => {
-        console.error("Error fetching tenant list: ", error); 
+        console.error("Error fetching tenant list: ", error);
       });
   }, []);
 
-  const handleLogin = (e: { preventDefault: () => void; }) => {
+  const handleLogin = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     // Find the selected tenant's ID based on the name
-    const selectedTenantObject = tenantList.find((tenant: Tenant) => tenant.TenantName === selectedTenant);
+    const selectedTenantObject = tenantList.find(
+      (tenant: Tenant) => tenant.TenantName === selectedTenant
+    );
     if (selectedTenantObject) {
       const loginData = {
         email,
-        username: email, 
-        // tenantId: selectedTenantObject.ID, 
+        username: email,
+        tenantId: selectedTenantObject.ID,
         password,
       };
 
       axios
         .post("https://sm.oortfy.com/v1/auth/login", loginData)
         .then((response) => {
-          if(response.data.Status ==="success"){
-          console.log("Login successful", response.data);
-          navigate('/')
+          if (response.data.Status === "success") {
+            console.log("Login successful", response.data);
+            navigate("/");
           }
         })
         .catch((error) => {
@@ -64,25 +66,24 @@ const Login = () => {
     }
   };
 
-//   axios
-//   .post("https://sm.oortfy.com/v1/auth/login", loginData{
-//     selectedTenant,email,password
-//   },{withCredentials:true}) 
-//   axios.defaults.header.common['Authorization'] = 'Bearer ${loginData['token']}';
-//   .then((response) => {
-//     if(response.data.Status ==="success"){
-//     console.log("Login successful", response.data);
-//     navigate('/')
-//     }
-//   })
-//   .catch((error) => {
-//     console.error("Login failed", error);
-//   });
-// } else {
-// console.error("Selected tenant not found in the list");
-// }
-// };
-
+  //   axios
+  //   .post("https://sm.oortfy.com/v1/auth/login", loginData{
+  //     selectedTenant,email,password
+  //   },{withCredentials:true})
+  //   axios.defaults.header.common['Authorization'] = 'Bearer ${loginData['token']}';
+  //   .then((response) => {
+  //     if(response.data.Status ==="success"){
+  //     console.log("Login successful", response.data);
+  //     navigate('/')
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Login failed", error);
+  //   });
+  // } else {
+  // console.error("Selected tenant not found in the list");
+  // }
+  // };
 
   return (
     <>
@@ -95,7 +96,10 @@ const Login = () => {
             <div className="container">
               <div className="account-logo">
                 <a href="admin-dashboard.html">
-                  <img src="src/assets/img/logo2.png" alt="Dreamguy's Technologies" />
+                  <img
+                    src="src/assets/img/logo2.png"
+                    alt="Dreamguy's Technologies"
+                  />
                 </a>
               </div>
               <div className="account-box">
@@ -145,11 +149,17 @@ const Login = () => {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
-                        <span className="fa-solid fa-eye-slash" id="toggle-password" />
+                        <span
+                          className="fa-solid fa-eye-slash"
+                          id="toggle-password"
+                        />
                       </div>
                     </div>
                     <div className="input-block mb-4 text-center">
-                      <button className="btn btn-primary account-btn" type="submit">
+                      <button
+                        className="btn btn-primary account-btn"
+                        type="submit"
+                      >
                         Login
                       </button>
                     </div>
