@@ -14,11 +14,11 @@ interface Tenant {
 }
 
 const Login = () => {
-  const [tenantList, setTenantList] = useState([]);
-  const [selectedTenant, setSelectedTenant] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  //const [tenantId, setTenantId] = useState(""); 
+  const [tenantList, setTenantList] = useState<Tenant[]>([]);
+  const [selectedTenant, setSelectedTenant] = useState<string>("");
+  const [selectedTenantId, setSelectedTenantId] = useState<number | null>(null);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -28,32 +28,38 @@ const Login = () => {
       .then((response) => {
         const tenantData = response.data;
         setTenantList(tenantData);
-        console.log(tenantData)
+        console.log(tenantData);
       })
       .catch((error) => {
-        console.error("Error fetching tenant list: ", error); 
+        console.error("Error fetching tenant list: ", error);
       });
   }, []);
 
-  const handleLogin = (e: { preventDefault: () => void; }) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Find the selected tenant's ID based on the name
-    const selectedTenantObject = tenantList.find((tenant: Tenant) => tenant.TenantName === selectedTenant);
-    if (selectedTenantObject) {
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    if (selectedTenantId) {
+      let isEmail = false;
+      if (email.match(emailRegex)) {
+        isEmail = true;
+      }
+  
       const loginData = {
-        email,
-        username: email, 
-        // tenantId: selectedTenantObject.ID, 
+        email: isEmail ? email : '',
+        username: isEmail ? '' : email,
+        tenantId: selectedTenantId,
         password,
       };
-
+      console.log(loginData)
+  
       axios
         .post("https://sm.oortfy.com/v1/auth/login", loginData)
         .then((response) => {
-          if(response.data.Status ==="success"){
-          console.log("Login successful", response.data);
-          navigate('/')
+          if (response.data.Status === "success") {
+            console.log("Login successful", response.data);
+            navigate('/');
           }
         })
         .catch((error) => {
@@ -63,35 +69,13 @@ const Login = () => {
       console.error("Selected tenant not found in the list");
     }
   };
-
-//   axios
-//   .post("https://sm.oortfy.com/v1/auth/login", loginData{
-//     selectedTenant,email,password
-//   },{withCredentials:true}) 
-//   axios.defaults.header.common['Authorization'] = 'Bearer ${loginData['token']}';
-//   .then((response) => {
-//     if(response.data.Status ==="success"){
-//     console.log("Login successful", response.data);
-//     navigate('/')
-//     }
-//   })
-//   .catch((error) => {
-//     console.error("Login failed", error);
-//   });
-// } else {
-// console.error("Selected tenant not found in the list");
-// }
-// };
-
+  
 
   return (
     <>
       <div className="account-page">
         <div className="main-wrapper">
           <div className="account-content">
-            {/* <a href="job-list.html" className="btn btn-primary apply-btn">
-              Apply Job
-            </a> */}
             <div className="container">
               <div className="account-logo">
                 <a href="admin-dashboard.html">
@@ -110,11 +94,20 @@ const Login = () => {
                         list="emailOptions"
                         id="emailInput"
                         value={selectedTenant}
-                        onChange={(e) => setSelectedTenant(e.target.value)}
+                        onChange={(e) => {
+                          const selectedTenantName = e.target.value;
+                          setSelectedTenant(selectedTenantName);
+
+                          // Find the selected tenant's ID and set it
+                          const selectedTenantObject = tenantList.find((tenant: Tenant) => tenant.TenantName === selectedTenantName);
+                          if (selectedTenantObject) {
+                            setSelectedTenantId(selectedTenantObject.ID);
+                          }
+                        }}
                       />
                       <datalist id="emailOptions">
                         {tenantList.map((tenant: Tenant) => (
-                          <option key={tenant.ID} value={tenant.TenantName} />
+                          <option key={tenant.ID} value={tenant.TenantName} data-id={tenant.ID} />
                         ))}
                       </datalist>
                     </div>
@@ -153,11 +146,6 @@ const Login = () => {
                         Login
                       </button>
                     </div>
-                    {/* <div className="account-footer">
-                      <p>
-                        Don't have an account yet? <a href="register.html">Register</a>
-                      </p>
-                    </div> */}
                   </form>
                 </div>
               </div>
