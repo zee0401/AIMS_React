@@ -9,7 +9,7 @@ axiosInstance.interceptors.request.use((config) => {
 
   if (token) {
     console.log("Auth Token:", token); 
-    config.headers.Authorization = `Bearer ${token}`;
+    config.headers.Authorization = `${token}`;
   } else {
     delete config.headers.Authorization;
   }
